@@ -1,0 +1,144 @@
+.process-section {
+  width: 100%;
+  background: #f3f4f5;
+  padding: 96px 40px 120px;
+}
+
+.process-section__inner {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.process-section__header {
+  max-width: 820px;
+  margin: 0 0 96px;
+}
+
+.process-section__title {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(42px, 4vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: #191c1d;
+}
+
+.process-section__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px;
+  align-items: start;
+}
+
+.process-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.process-row__number {
+  display: block;
+  margin: 0 0 28px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(64px, 5vw, 86px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: rgba(8, 35, 92, 0.1);
+}
+
+.process-row__content {
+  max-width: 100%;
+}
+
+.process-row__title {
+  margin: 0 0 16px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #191c1d;
+}
+
+.process-row__desc {
+  margin: 0;
+  max-width: 31ch;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  color: #444650;
+}
+
+.process-row__media {
+  display: none;
+}
+
+/* TABLET */
+@media (max-width: 1180px) {
+  .process-section {
+    padding: 80px 32px 96px;
+  }
+
+  .process-section__header {
+    margin-bottom: 72px;
+  }
+
+  .process-section__title {
+    font-size: clamp(38px, 4.8vw, 50px);
+  }
+
+  .process-section__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .process-row__number {
+    margin-bottom: 22px;
+    font-size: clamp(58px, 6vw, 74px);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .process-section {
+    padding: 56px 20px 64px;
+  }
+
+  .process-section__header {
+    margin-bottom: 44px;
+    max-width: 100%;
+  }
+
+  .process-section__title {
+    font-size: clamp(32px, 8vw, 40px);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  .process-section__list {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .process-row__number {
+    margin-bottom: 14px;
+    font-size: 52px;
+  }
+
+  .process-row__title {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .process-row__desc {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}

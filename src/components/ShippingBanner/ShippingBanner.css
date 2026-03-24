@@ -1,0 +1,125 @@
+.shipping-banner {
+  width: 100%;
+  background: #e8ded2;
+  padding: 120px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* CONTENEDOR */
+.shipping-banner__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding-top: 40px; /* espacio para el bus */
+}
+
+/* BUS */
+.shipping-banner__bus {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  font-size: 24px;
+  opacity: 0.55;
+  line-height: 1;
+  animation: busTravel 8s linear infinite;
+  pointer-events: none;
+}
+
+/* TEXTO */
+.shipping-banner__text {
+  margin: 0 auto 48px;
+  max-width: 820px; /* más angosto para que distribuya mejor */
+  text-align: center;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(30px, 4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+
+  color: #191c1d;
+  text-transform: uppercase;
+  text-wrap: balance; /* mejora el reparto de líneas */
+}
+
+/* BOTÓN */
+.shipping-banner__cta {
+  display: inline-block;
+  padding: 20px 64px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  background: #08235c;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.shipping-banner__cta:hover {
+  background: #243a73;
+  transform: translateY(-2px);
+}
+
+/* ANIMACIÓN DEL BUS DE LADO A LADO */
+@keyframes busTravel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 80px));
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .shipping-banner {
+    padding: 100px 32px;
+  }
+
+  .shipping-banner__inner {
+    padding-top: 36px;
+  }
+
+  .shipping-banner__text {
+    max-width: 700px;
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin-bottom: 40px;
+  }
+
+  .shipping-banner__bus {
+    font-size: 22px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .shipping-banner {
+    padding: 72px 20px;
+  }
+
+  .shipping-banner__inner {
+    padding-top: 30px;
+  }
+
+  .shipping-banner__text {
+    max-width: 320px;
+    font-size: clamp(24px, 7vw, 30px);
+    line-height: 1.12;
+    margin-bottom: 32px;
+  }
+
+  .shipping-banner__cta {
+    padding: 16px 40px;
+    font-size: 11px;
+  }
+
+  .shipping-banner__bus {
+    font-size: 18px;
+  }
+}
