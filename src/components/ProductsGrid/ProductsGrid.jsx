@@ -14,19 +14,16 @@ export default function ProductsGrid() {
     {
       image: "/personalizar1.png",
       title: "Rayas",
-
       text: "Alternancia rítmica de tonalidades y grosores que definen una identidad visual clásica y sofisticada.",
     },
     {
       image: "/personalizar2.png",
       title: "Letras",
-
       text: "Incorporación de nombres, iniciales o mensajes dentro del tejido para crear una identidad única y reconocible.",
     },
     {
       image: "/personalizar3.png",
       title: "Patrones",
-
       text: "Patrones complejos integrados directamente en la estructura del tejido para un acabado visual distintivo y artesanal.",
     },
   ];
@@ -69,7 +66,8 @@ export default function ProductsGrid() {
             <h2 className="pg-sectionTitle">Materia prima de alta calidad</h2>
             <p className="pg-sectionLead">
               Seleccionamos cuidadosamente cada fibra para garantizar un tacto
-              superior y una durabilidad excepcional en cada pieza que producimos.
+              superior y una durabilidad excepcional en cada pieza que
+              producimos.
             </p>
           </div>
 
@@ -86,11 +84,10 @@ export default function ProductsGrid() {
 
               <div className="pg-materialCard__body">
                 <h3 className="pg-materialCard__title">Algodón</h3>
-      
                 <p className="pg-materialCard__text">
                   Nuestras fibras de algodón ofrecen una suavidad incomparable y
-                  una transpirabilidad natural, ideal para el contacto diario con
-                  la piel.
+                  una transpirabilidad natural, ideal para el contacto diario
+                  con la piel.
                 </p>
               </div>
             </article>
@@ -109,7 +106,8 @@ export default function ProductsGrid() {
                 <h3 className="pg-materialCard__title">Poliéster</h3>
                 <p className="pg-materialCard__text">
                   Fibras de ingeniería diseñadas para mantener la intensidad del
-                  color y resistir el desgaste del tiempo, asegurando longevidad.
+                  color y resistir el desgaste del tiempo, asegurando
+                  longevidad.
                 </p>
               </div>
             </article>
@@ -177,17 +175,14 @@ export default function ProductsGrid() {
           <div className="pg-custom__copy">
             <h2 className="pg-sectionTitle">Opciones de personalización</h2>
             <p className="pg-sectionLead pg-sectionLead--custom">
-              Cada proyecto es único. Ofrecemos técnicas de tejido avanzadas para
-              materializar su visión creativa con precisión milimétrica.
+              Cada proyecto es único. Ofrecemos técnicas de tejido avanzadas
+              para materializar su visión creativa con precisión milimétrica.
             </p>
 
             <article className="pg-customItem">
               <h3 className="pg-customItem__title">
                 {customSlides[current].title}
               </h3>
-              <p className="pg-customItem__meta">
-                {customSlides[current].meta}
-              </p>
               <p className="pg-customItem__text">
                 {customSlides[current].text}
               </p>
