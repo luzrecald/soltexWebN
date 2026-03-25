@@ -7,13 +7,17 @@
 
 .ft-inner {
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* TOP */
 .ft-top {
   display: grid;
-  grid-template-columns: minmax(280px, 1.3fr) minmax(180px, 0.8fr) minmax(160px, 0.75fr) minmax(240px, 1fr);
+  grid-template-columns:
+    minmax(280px, 1.3fr)
+    minmax(180px, 0.8fr)
+    minmax(160px, 0.75fr)
+    minmax(240px, 1fr);
   gap: 42px;
   align-items: start;
 }
@@ -78,7 +82,7 @@
 .ft-col {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -142,39 +146,83 @@
 /* MOBILE */
 @media (max-width: 680px) {
   .ft {
-    padding: 38px 18px 20px;
+    padding: 28px 18px 16px;
   }
 
   .ft-top {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 0;
+  }
+
+  .ft-brand {
+    max-width: 100%;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.08);
   }
 
   .ft-logo {
-    height: 40px;
-    margin-bottom: 16px;
+    height: 34px;
+    margin-bottom: 14px;
   }
 
-  .ft-tagline,
-  .ft-link {
-    font-size: 15px;
+  .ft-tagline {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .ft-socialRow {
-    margin-top: 18px;
+    margin-top: 16px;
+    gap: 10px;
   }
 
   .ft-socialIcon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ft-socialIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ft-col {
+    gap: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+  }
+
+  .ft-col:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .ft-heading {
+    margin-bottom: 2px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+
+  .ft-link {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .ft-link--address {
+    max-width: 100%;
   }
 
   .ft-bottom {
-    margin-top: 28px;
-    padding-top: 16px;
+    margin-top: 22px;
+    padding-top: 14px;
   }
 
   .ft-copy {
-    font-size: 12.5px;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
   }
 }

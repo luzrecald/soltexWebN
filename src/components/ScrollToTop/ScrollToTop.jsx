@@ -5,21 +5,20 @@ export default function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (pathname === "/productos" && hash) {
+    if (hash) {
       const el = document.getElementById(hash.replace("#", ""));
-
       if (el) {
         setTimeout(() => {
           el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 50);
+        }, 80);
         return;
       }
     }
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
     });
   }, [pathname, hash]);
 

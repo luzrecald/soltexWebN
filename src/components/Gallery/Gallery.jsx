@@ -14,10 +14,6 @@ const Gallery = () => {
           <div className="gallery-copy">
             <h2 className="gallery-title">Excelencia en cada puntada</h2>
 
-            <p className="gallery-lead">
-              Nos especializamos en crear cuellos y pretinas a medida, cuidando cada
-              n detalle para lograr piezas duraderas y con el acabado que tu prenda merece.
-            </p>
 
             <div className="gallery-points">
               {HIGHLIGHTS.map((item) => (

@@ -1,6 +1,6 @@
 .shipping-banner {
   width: 100%;
-  background: #e8ded2;
+  background: #22306b; /* mismo color que el segundo bloque */
   padding: 80px 32px;
   position: relative;
   overflow: hidden;
@@ -21,7 +21,7 @@
   top: 0;
   left: -40px;
   font-size: 20px;
-  opacity: 0.5;
+  opacity: 0.4; /* un poco más suave en fondo oscuro */
   line-height: 1;
   animation: busTravel 8s linear infinite;
   pointer-events: none;
@@ -38,7 +38,7 @@
   letter-spacing: -0.02em;
   font-weight: 700;
 
-  color: #191c1d;
+  color: #ffffff; /* cambiado a blanco */
   text-transform: uppercase;
   text-wrap: balance;
 }
@@ -54,14 +54,16 @@
   text-transform: uppercase;
   font-weight: 600;
 
-  background: #08235c;
-  color: #ffffff;
+  background: #ffffff; /* invertido para contrastar */
+  color: #22306b;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .shipping-banner__cta:hover {
-  background: #243a73;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   transform: translateY(-2px);
 }
 
