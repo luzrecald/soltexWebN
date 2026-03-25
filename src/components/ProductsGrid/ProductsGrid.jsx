@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { PRODUCTS } from "../productsData";
 import "./ProductsGrid.css";
 
@@ -8,7 +9,39 @@ export default function ProductsGrid() {
   const cottonImage = "/hiloAlgodon.jpg";
   const polyesterImage = "/hiloPoliester.jpg";
   const stripesImage = "/tejido1.png";
-  const jacquardImage = "/productGrid1.png";
+
+  const customSlides = [
+    {
+      image: "/personalizar1.png",
+      title: "Rayas",
+      meta: "Color combinations",
+      text: "Alternancia rítmica de tonalidades y grosores que definen una identidad visual clásica y sofisticada.",
+    },
+    {
+      image: "/personalizar2.png",
+      title: "Letras",
+      meta: "Woven lettering",
+      text: "Incorporación de nombres, iniciales o mensajes dentro del tejido para crear una identidad única y reconocible.",
+    },
+    {
+      image: "/personalizar3.png",
+      title: "Patrones",
+      meta: "Integrated patterns",
+      text: "Patrones complejos integrados directamente en la estructura del tejido para un acabado visual distintivo y artesanal.",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % customSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? customSlides.length - 1 : prev - 1
+    );
+  };
 
   return (
     <section id="productos" className="pg-page">
@@ -95,13 +128,50 @@ export default function ProductsGrid() {
               />
             </div>
 
-            <div className="pg-custom__visual">
+            <div className="pg-custom__visual pg-custom__carousel">
               <img
-                src={jacquardImage}
-                alt="Diseño textil personalizado"
+                src={customSlides[current].image}
+                alt={customSlides[current].title}
                 loading="lazy"
+                className="pg-custom__carouselImage"
                 style={{ objectPosition: "center center" }}
               />
+
+              <div className="pg-custom__carouselNav">
+                <button
+                  type="button"
+                  className="pg-custom__carouselControl"
+                  onClick={prevSlide}
+                  aria-label="Imagen anterior"
+                >
+                  Anterior
+                </button>
+
+                <div className="pg-custom__carouselDots">
+                  {customSlides.map((slide, index) => (
+                    <button
+                      key={slide.title}
+                      type="button"
+                      className={`pg-custom__carouselDot ${
+                        current === index ? "is-active" : ""
+                      }`}
+                      onClick={() => setCurrent(index)}
+                      aria-label={`Ver ${slide.title}`}
+                    >
+                      <span className="pg-custom__carouselDotLine" />
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  className="pg-custom__carouselControl"
+                  onClick={nextSlide}
+                  aria-label="Imagen siguiente"
+                >
+                  Siguiente
+                </button>
+              </div>
             </div>
           </div>
 
@@ -113,20 +183,14 @@ export default function ProductsGrid() {
             </p>
 
             <article className="pg-customItem">
-              <h3 className="pg-customItem__title">Rayas</h3>
-              <p className="pg-customItem__meta">Color combinations</p>
-              <p className="pg-customItem__text">
-                Alternancia rítmica de tonalidades y grosores que definen una
-                identidad visual clásica y sofisticada.
+              <h3 className="pg-customItem__title">
+                {customSlides[current].title}
+              </h3>
+              <p className="pg-customItem__meta">
+                {customSlides[current].meta}
               </p>
-            </article>
-
-            <article className="pg-customItem">
-              <h3 className="pg-customItem__title">Tejido Jacquard</h3>
-              <p className="pg-customItem__meta">Integrated patterns</p>
               <p className="pg-customItem__text">
-                Patrones complejos integrados directamente en la estructura del
-                tejido para un acabado de lujo artesanal.
+                {customSlides[current].text}
               </p>
             </article>
           </div>

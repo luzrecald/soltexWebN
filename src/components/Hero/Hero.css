@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 82vh;
+  height: auto;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -32,41 +33,41 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 80rem; /* max-w-7xl */
+  max-width: 72rem;
   margin: 0 auto;
-  padding-left: 2rem;   /* px-8 */
-  padding-right: 2rem;  /* px-8 */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   display: flex;
   align-items: center;
 }
 
 .hero-card {
-  max-width: 48rem; /* max-w-3xl */
-  background: rgba(255, 255, 255, 0.4);
+  max-width: 38rem;
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 2rem;
+  padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero-title {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   color: #08235c;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-size: 2.8rem;
+  line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.025em;
-  max-width: 10ch;
+  max-width: 9ch;
 }
 
 .hero-subtitle {
-  margin: 0 0 2.5rem;
-  max-width: 36rem;
+  margin: 0 0 1.8rem;
+  max-width: 30rem;
   color: #1f2937;
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   line-height: 1.5;
 }
 
@@ -77,8 +78,8 @@
   background: #08235c;
   color: #ffffff;
   text-decoration: none;
-  padding: 1rem 2.5rem;
-  font-size: 0.75rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   font-weight: 500;
@@ -92,32 +93,31 @@
 
 @media (min-width: 768px) {
   .hero-shell {
-    padding-left: 6rem;   /* md:px-24 */
-    padding-right: 6rem;  /* md:px-24 */
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .hero-card {
-    padding: 3rem; /* md:p-12 */
+    padding: 2rem;
   }
 
   .hero-title {
-    font-size: 4.5rem; /* md:text-[4.5rem] */
+    font-size: 3.6rem;
   }
 
   .hero-subtitle {
-    font-size: 1.25rem; /* md:text-xl */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 900px) {
   .hero {
     min-height: calc(88vh - 78px);
-    height: auto;
   }
 
   .hero-shell {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .hero-card {
@@ -125,19 +125,19 @@
   }
 
   .hero-title {
-    font-size: clamp(2.6rem, 9vw, 4rem);
+    font-size: clamp(2.3rem, 8vw, 3.4rem);
     max-width: 9ch;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    letter-spacing: 0.16em;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
   }
 }
 
 @media (max-width: 560px) {
   .hero {
-    min-height: calc(82vh - 78px);
+    min-height: calc(78vh - 78px);
   }
 
   .hero-shell {
@@ -146,22 +146,74 @@
   }
 
   .hero-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .hero-title {
-    font-size: clamp(2.4rem, 11vw, 3.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: 0.9rem;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.4rem;
     max-width: 100%;
   }
 
   .hero-btn {
-    padding: 0.95rem 1.8rem;
-    font-size: 0.68rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.66rem;
   }
 }
+
+/* ===== HERO ANIMATIONS ===== */
+
+.hero-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFade 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-title {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFade 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.35s;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFade 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFade 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.65s;
+}
+
+/* Fondo con zoom leve */
+.hero-image {
+  animation: heroZoom 6s ease-out forwards;
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+

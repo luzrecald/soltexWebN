@@ -1,7 +1,7 @@
 export const PRODUCTS = [
   {
     id: "cuellos-polo",
-    title: "Cuellos para remeras tipo polo",
+    title: "Cuellos tipo polo",
     image: "/product1.png",
     cardPosition: "center center",
     gallery: [
@@ -35,7 +35,7 @@ export const PRODUCTS = [
 
   {
     id: "pretinas-polo",
-    title: "Pretinas para remeras tipo polo",
+    title: "Pretinas tipo polo",
     image: "/product2.png",
     cardPosition: "75% center",
     gallery: [
@@ -73,7 +73,7 @@ export const PRODUCTS = [
     image: "/product3.png",
     cardPosition: "75% center",
     gallery: [
-      "/product3.png",
+      "/pretinaSimple5.png",
       "/pretinaDoble5.JPG",
       "/pretinaDoble1.JPG",
       "/pretinaDoble2.JPG",

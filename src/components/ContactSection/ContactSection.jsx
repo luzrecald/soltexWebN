@@ -169,18 +169,21 @@ export default function ContactSection() {
       {/* MAP / VISUAL */}
       <section className="ct-mapSection" aria-label="Ubicación visual">
         <img src={contact.mapImage} alt="Visítanos" className="ct-mapBg" />
-
-        <div className="ct-mapCard">
-          <div className="ct-mapIcon">⌖</div>
-          <h3>Visítanos</h3>
-          <p>
-            Estamos en el centro industrial de San Lorenzo, atendiendo pedidos a
-            todo el país.
-          </p>
-          <a href={contact.mapsUrl} target="_blank" rel="noreferrer">
-            Ver en Google Maps
-          </a>
-        </div>
+<div className="ct-mapCard">
+  <div className="ct-mapIcon">⌖</div>
+  <h3>Visítanos</h3>
+  <p>
+    Estamos a pasos del centro de San Lorenzo, atendiendo pedidos de
+    todo el país.
+  </p>
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Soltex+Soluciones+Textiles+-+Sucursal+1,+General+Genes+entre+Julia+M.+Cueto+y+Mcal+Estigarribia,+San+Lorenzo,+Paraguay"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Ver en Google Maps
+  </a>
+</div>
       </section>
     </section>
   );

@@ -1,57 +1,64 @@
 .story {
   width: 100%;
-  padding: 6rem 0;
+  padding: 72px 0;
   background: #f8f9fa;
 }
 
 .story-inner {
-  width: min(1920px, 100%);
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .story-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3.5rem;
+  gap: 40px;
   align-items: center;
 }
 
 /* COLUMNA IZQUIERDA */
 .story-content {
-  max-width: 900px;
+  max-width: 560px;
 }
 
 .story-kicker {
-  margin: 0 0 1.5rem;
-  font-size: 0.75rem;
+  margin: 0 0 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
   line-height: 1;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
   color: #326853;
 }
 
 .story-title {
-  margin: 0 0 2rem;
-  max-width: 900px;
+  margin: 0 0 1.5rem;
+  max-width: 560px;
   color: #191c1d;
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(34px, 3.2vw, 46px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
   font-weight: 700;
 }
 
 .story-prose {
-  max-width: 900px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* 👈 espacio entre párrafos */
 }
 
 .story-prose p {
   margin: 0;
   color: #444650;
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 /* COLUMNA DERECHA */
@@ -62,7 +69,7 @@
 .story-video-wrap {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 620px;
   margin-left: auto;
   overflow: hidden;
   background: #eceff2;
@@ -86,22 +93,22 @@
 /* DESKTOP */
 @media (min-width: 768px) {
   .story {
-    padding: 10rem 0;
+    padding: 84px 0;
   }
 
   .story-inner {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   .story-grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 4rem;
+    gap: 40px;
   }
 
   .story-content {
     grid-column: span 5 / span 5;
-    max-width: 900px;
+    max-width: 560px;
   }
 
   .story-media {
@@ -112,16 +119,16 @@
 /* TABLET */
 @media (max-width: 900px) {
   .story {
-    padding: 5rem 0;
+    padding: 56px 0;
   }
 
   .story-inner {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .story-grid {
-    gap: 3rem;
+    gap: 32px;
   }
 
   .story-content,
@@ -131,41 +138,44 @@
   }
 
   .story-title {
-    margin-bottom: 1.5rem;
-    max-width: 900px;
+    margin-bottom: 1.25rem;
+    max-width: 100%;
+    font-size: clamp(32px, 4.8vw, 42px);
   }
 
   .story-prose p {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.65;
   }
 }
 
 /* MOBILE */
 @media (max-width: 560px) {
   .story {
-    padding: 4.5rem 0;
+    padding: 48px 0;
   }
 
   .story-inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .story-kicker {
-    margin-bottom: 1rem;
-    font-size: 0.72rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
   }
 
   .story-title {
-    font-size: clamp(2rem, 9vw, 2.8rem);
-    margin-bottom: 1.25rem;
-    max-width: 900px;
+    font-size: clamp(28px, 7vw, 36px);
+    margin-bottom: 1rem;
+    max-width: 100%;
+    line-height: 1;
   }
 
   .story-prose p {
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.6;
   }
 }
 
@@ -173,4 +183,32 @@
   .story-video {
     transition: none;
   }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(64px) scale(0.985);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(64px) scale(0.985);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }

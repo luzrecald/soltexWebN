@@ -1,43 +1,45 @@
 .products-preview {
   background: #f3f1f2;
-  padding: 48px 0 72px;
+  padding: 40px 0 60px;
 }
 
 .products-preview__inner {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0 32px;
   box-sizing: border-box;
 }
 
 .products-preview__header {
-  margin-bottom: 42px;
+  margin-bottom: 32px;
 }
 
 .products-preview .products-preview__title-force {
   margin: 0 !important;
   font-family: "Manrope", sans-serif !important;
-  font-size: 34px !important;
+  font-size: 30px !important;
   font-weight: 700 !important;
   line-height: 1.05 !important;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   color: #111111 !important;
 }
 
 .products-preview__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
-  align-items: start;
+  gap: 24px;
+  align-items: stretch;
 }
 
 .products-preview__item {
   min-width: 0;
+  height: 100%;
 }
 
 .products-preview__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -46,8 +48,8 @@
 }
 
 .products-preview__link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(16, 24, 40, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(16, 24, 40, 0.06);
 }
 
 .products-preview__media {
@@ -55,6 +57,7 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #ece9e8;
+  flex-shrink: 0;
 }
 
 .products-preview__media img {
@@ -67,103 +70,108 @@
 }
 
 .products-preview__link:hover .products-preview__media img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .products-preview__content {
   display: flex;
   flex-direction: column;
-  padding: 22px 20px 24px;
+  flex: 1;
+  min-height: 220px; /* 🔑 clave para igualar alturas */
+  padding: 18px 16px 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .products-preview__eyebrow {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   line-height: 1.2;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #7c7f88;
 }
 
 .products-preview__name {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   font-family: "Manrope", sans-serif;
-  font-size: 24px;
-  line-height: 1.08;
+  font-size: 20px;
+  line-height: 1.1;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   color: #151515;
 }
 
 .products-preview__meta {
   display: grid;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
 .products-preview__meta p {
   margin: 0;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.55;
   color: #5e6069;
 }
 
 .products-preview__cta {
   display: inline-block;
   align-self: flex-start;
+  margin-top: auto; /* 🔑 empuja el botón abajo */
   font-family: "Inter", sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1.2;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
   color: #102a72;
   border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
 }
 
+/* TABLET */
 @media (max-width: 1200px) {
   .products-preview__inner {
-    padding: 0 48px;
+    padding: 0 24px;
   }
 
   .products-preview__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
+    gap: 20px;
   }
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
   .products-preview {
     padding: 28px 0 44px;
   }
 
   .products-preview__inner {
-    padding: 0 20px;
+    padding: 0 18px;
   }
 
   .products-preview__header {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .products-preview .products-preview__title-force {
-    font-size: 28px !important;
+    font-size: 26px !important;
   }
 
   .products-preview__grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 18px;
   }
 
   .products-preview__name {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .products-preview__meta p {
-    font-size: 13px;
+    font-size: 12px;
   }
 }

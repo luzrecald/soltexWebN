@@ -3,12 +3,12 @@
 ========================= */
 .fh-features {
   width: 100%;
-  padding: 80px 40px;
+  padding: 64px 32px;
   background: #f6f6f6;
 }
 
 .fh-featuresInner {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -17,14 +17,16 @@
 ========================= */
 .fh-featuresHeader {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 44px;
 }
 
 .fh-featuresTitle {
   margin: 0;
-  font-size: clamp(32px, 3.5vw, 48px);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: #111;
 }
 
@@ -42,7 +44,7 @@
    CARD
 ========================= */
 .fh-featureCard {
-  padding: 60px 40px;
+  padding: 44px 28px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -57,7 +59,7 @@
    ICON
 ========================= */
 .fh-featureIconWrap {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +69,7 @@
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -84,20 +86,22 @@
    TEXT
 ========================= */
 .fh-featureHeading {
-  margin: 0 0 16px;
-  font-size: 18px;
-  font-weight: 600;
+  margin: 0 0 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #111;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 .fh-featureText {
-  max-width: 1440px;
+  max-width: 30ch;
   margin: 0 auto;
-  font-size: 15px;
-  line-height: 1.7;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
   color: rgba(0, 0, 0, 0.65);
 }
 
@@ -105,8 +109,24 @@
    TABLET
 ========================= */
 @media (max-width: 1024px) {
+  .fh-features {
+    padding: 56px 24px;
+  }
+
+  .fh-featuresHeader {
+    margin-bottom: 36px;
+  }
+
+  .fh-featuresTitle {
+    font-size: clamp(26px, 4vw, 34px);
+  }
+
   .fh-featuresList {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .fh-featureCard {
+    padding: 36px 24px;
   }
 
   .fh-featureCard--border {
@@ -123,11 +143,15 @@
 ========================= */
 @media (max-width: 640px) {
   .fh-features {
-    padding: 60px 20px;
+    padding: 48px 18px;
   }
 
   .fh-featuresHeader {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
+  }
+
+  .fh-featuresTitle {
+    font-size: clamp(24px, 7vw, 32px);
   }
 
   .fh-featuresList {
@@ -135,12 +159,30 @@
   }
 
   .fh-featureCard {
-    padding: 40px 20px;
+    padding: 28px 18px;
     border-right: none !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .fh-featureCard:last-child {
     border-bottom: none;
+  }
+
+  .fh-featureIconWrap {
+    margin-bottom: 14px;
+  }
+
+  .fh-featureIcon {
+    font-size: 24px;
+  }
+
+  .fh-featureHeading {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .fh-featureText {
+    font-size: 13px;
+    line-height: 1.6;
   }
 }

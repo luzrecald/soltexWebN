@@ -13,8 +13,8 @@ export default function Home() {
     <>
       <Hero />
       <FamilyStory />
+       <HomeProductsPreview />
       <Features />
-      <HomeProductsPreview />
       <CustomizationSteps />
       <Gallery />
      < ShippingBanner/>

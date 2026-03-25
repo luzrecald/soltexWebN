@@ -1,12 +1,37 @@
+import { useEffect, useRef } from "react";
 import "./FamilyStory.css";
 
 export default function FamilyStory() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          element.classList.add("visible");
+          observer.unobserve(element);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="empresa" className="story" aria-labelledby="story-title">
+    <section
+      ref={sectionRef}
+      id="empresa"
+      className="story scroll-reveal"
+      aria-labelledby="story-title"
+    >
       <div className="story-inner">
         <div className="story-grid">
-
-          {/* IZQUIERDA */}
           <div className="story-content">
             <p className="story-kicker">EMPRESA FAMILIAR</p>
 
@@ -35,7 +60,6 @@ export default function FamilyStory() {
             </div>
           </div>
 
-          {/* DERECHA */}
           <div className="story-media">
             <div className="story-video-wrap">
               <video
@@ -48,7 +72,6 @@ export default function FamilyStory() {
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>
