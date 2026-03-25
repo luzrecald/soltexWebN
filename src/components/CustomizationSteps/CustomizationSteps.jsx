@@ -3,22 +3,22 @@ import "./CustomizationSteps.css";
 const STEPS = [
   {
     heading: "Envíanos tu diseño",
-    desc: "Comparta su idea inicial o muestra física para comenzar el proceso de desarrollo.",
+    desc: "Comparte tu diseño o una muestra física para comenzar a darle forma a tu proyecto.",
     image: "/step1.png",
   },
   {
     heading: "Definimos colores",
-    desc: "Selección exhaustiva de hilos para coincidir exactamente con su identidad visual.",
+    desc: "Seleccionamos cuidadosamente los hilos para que encajen perfectamente con tu prenda.",
     image: "/step2.png",
   },
   {
     heading: "Medidas y material",
-    desc: "Ajuste técnico de las dimensiones y selección de la composición textil ideal.",
+    desc: "Definimos los tamaños y el material del que va a ser fabricado tu pedido .",
     image: "/step3.png",
   },
   {
     heading: "Coordinamos entrega",
-    desc: "Producción eficiente y logística puerta a puerta en todo el territorio nacional.",
+    desc: "Nos encargamos de la producción y la entrega de forma rápida y eficiente.",
     image: "/step4.png",
   },
 ];

@@ -64,7 +64,7 @@ export default function ProductDetail() {
       <section className="pd-page">
         <div className="pd-inner">
           <p className="pd-notFound">Producto no encontrado.</p>
-          <Link to="/productos" className="pd-backLink">
+          <Link to="/productos#productos-lista" className="pd-backLink">
             ← Volver a productos
           </Link>
         </div>
@@ -89,7 +89,7 @@ export default function ProductDetail() {
     <section className="pd-page">
       <div className="pd-inner">
         <div className="pd-topbar">
-          <Link to="/productos" className="pd-backLink">
+          <Link to="/productos#productos-lista" className="pd-backLink">
             ← Volver a productos
           </Link>
         </div>
