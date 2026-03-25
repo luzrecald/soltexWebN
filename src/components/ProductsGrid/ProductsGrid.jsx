@@ -14,19 +14,19 @@ export default function ProductsGrid() {
     {
       image: "/personalizar1.png",
       title: "Rayas",
-      meta: "Color combinations",
+
       text: "Alternancia rítmica de tonalidades y grosores que definen una identidad visual clásica y sofisticada.",
     },
     {
       image: "/personalizar2.png",
       title: "Letras",
-      meta: "Woven lettering",
+
       text: "Incorporación de nombres, iniciales o mensajes dentro del tejido para crear una identidad única y reconocible.",
     },
     {
       image: "/personalizar3.png",
       title: "Patrones",
-      meta: "Integrated patterns",
+
       text: "Patrones complejos integrados directamente en la estructura del tejido para un acabado visual distintivo y artesanal.",
     },
   ];
@@ -86,7 +86,7 @@ export default function ProductsGrid() {
 
               <div className="pg-materialCard__body">
                 <h3 className="pg-materialCard__title">Algodón</h3>
-                <p className="pg-materialCard__meta">Soft &amp; Resistant</p>
+      
                 <p className="pg-materialCard__text">
                   Nuestras fibras de algodón ofrecen una suavidad incomparable y
                   una transpirabilidad natural, ideal para el contacto diario con
@@ -107,7 +107,6 @@ export default function ProductsGrid() {
 
               <div className="pg-materialCard__body">
                 <h3 className="pg-materialCard__title">Poliéster</h3>
-                <p className="pg-materialCard__meta">Durable Colors</p>
                 <p className="pg-materialCard__text">
                   Fibras de ingeniería diseñadas para mantener la intensidad del
                   color y resistir el desgaste del tiempo, asegurando longevidad.
