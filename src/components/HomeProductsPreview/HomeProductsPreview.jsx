@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { PRODUCTS } from "../productsData";
 import "./HomeProductsPreview.css";
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+    },
+  },
+};
 
 export default function HomeProductsPreview() {
   return (
@@ -10,17 +32,28 @@ export default function HomeProductsPreview() {
     >
       <div className="products-preview__inner">
         <header className="products-preview__header">
+          <span className="products-preview__kicker">Catálogo</span>
           <h2
             id="products-preview-title"
             className="products-preview__title-force"
           >
-            Nuestros Productos
+            Productos
           </h2>
         </header>
 
-        <div className="products-preview__grid">
+        <motion.div
+          className="products-preview__grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           {PRODUCTS.map((product) => (
-            <article key={product.id} className="products-preview__item">
+            <motion.article
+              key={product.id}
+              className="products-preview__item"
+              variants={cardVariants}
+            >
               <Link
                 to={`/productos/${product.id}`}
                 className="products-preview__link"
@@ -37,41 +70,20 @@ export default function HomeProductsPreview() {
                 </div>
 
                 <div className="products-preview__content">
-                  <span className="products-preview__eyebrow">Producto</span>
+                  <h3 className="products-preview__name">{product.title}</h3>
 
-                  <h3 className="products-preview__name">
-                    {product.title}
-                  </h3>
+                  {product.materials?.length > 0 && (
+                    <p className="products-preview__meta">
+                      {product.materials.join(" · ")}
+                    </p>
+                  )}
 
-                  <div className="products-preview__meta">
-                    {product.materials?.length > 0 && (
-                      <p>
-                        <strong>Materiales:</strong> {product.materials.join(" · ")}
-                      </p>
-                    )}
-
-                    {product.design?.length > 0 && (
-                      <p>
-                        <strong>Diseños:</strong> {product.design.join(" · ")}
-                      </p>
-                    )}
-
-                    {product.applications?.length > 0 && (
-                      <p>
-                        <strong>Aplicaciones:</strong>{" "}
-                        {product.applications.join(" · ")}
-                      </p>
-                    )}
-                  </div>
-
-                  <span className="products-preview__cta">
-                    Ver especificación
-                  </span>
+                  <span className="products-preview__cta">Ver producto</span>
                 </div>
               </Link>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

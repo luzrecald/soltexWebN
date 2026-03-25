@@ -11,9 +11,9 @@ export default function ContactSection() {
       whatsappLabel: "+595 981 948 566",
       whatsappDigits: "595981948566",
       email: "soltexventas@gmail.com",
-      heroImage: "/Contacto.png",
       mapImage: "/visitanos.png",
-      mapsUrl: "https://maps.google.com/?q=San+Lorenzo+Paraguay",
+      mapsUrl:
+        "https://www.google.com/maps/search/?api=1&query=Soltex+Soluciones+Textiles+-+Sucursal+1,+General+Genes+entre+Julia+M.+Cueto+y+Mcal+Estigarribia,+San+Lorenzo,+Paraguay",
     }),
     []
   );
@@ -21,58 +21,44 @@ export default function ContactSection() {
   return (
     <section className="contact-page" id="contacto" aria-labelledby="ct-title">
       <div className="contact-shell">
-        {/* HERO */}
-        <header className="ct-hero">
-          <div className="ct-heroCopy">
-            <h1 className="ct-title" id="ct-title">
-              Contacto
-            </h1>
-
-            <p className="ct-lead">
-              Escribinos y respondemos lo antes posible. También podés
-              contactarnos directo por WhatsApp o email.
-            </p>
-          </div>
-
-          <div className="ct-heroMedia">
-            <img src={contact.heroImage} alt="Contacto Soltex" />
-          </div>
+        <header className="ct-header">
+          <span className="ct-kicker">Contacto</span>
+          <h1 className="ct-title" id="ct-title">
+            Hablemos
+          </h1>
+          <p className="ct-lead">
+            Escribinos y te respondemos lo antes posible. También podés
+            contactarnos directo por WhatsApp o email.
+          </p>
         </header>
 
-        {/* INFO + FORM */}
         <section className="ct-main">
           <aside className="ct-info" aria-label="Información de contacto">
-            <div className="ct-infoGroup">
-              <span className="ct-kicker">Ubicación</span>
-              <p>{contact.location}</p>
-            </div>
+            <div className="ct-infoBlock">
+              <div className="ct-infoGroup">
+                <span className="ct-label">Ubicación</span>
+                <p>{contact.location}</p>
+              </div>
 
-            <div className="ct-infoGroup">
-              <span className="ct-kicker">WhatsApp</span>
-              <a
-                href={`https://wa.me/${contact.whatsappDigits}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {contact.whatsappLabel}
-              </a>
-            </div>
+              <div className="ct-infoGroup">
+                <span className="ct-label">WhatsApp</span>
+                <a
+                  href={`https://wa.me/${contact.whatsappDigits}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {contact.whatsappLabel}
+                </a>
+              </div>
 
-            <div className="ct-infoGroup">
-              <span className="ct-kicker">Email General</span>
-              <a href={`mailto:${contact.email}`} className="is-underlined">
-                {contact.email}
-              </a>
-            </div>
-
-            <div className="ct-quote">
-              <p>
-                “La excelencia en textiles comienza con una conversación honesta.”
-              </p>
+              <div className="ct-infoGroup">
+                <span className="ct-label">Email</span>
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              </div>
             </div>
           </aside>
 
-          <div className="ct-formWrap">
+          <div className="ct-formCard">
             <form className="ct-form" onSubmit={handleSubmit}>
               <div className="ct-grid">
                 <div className="ct-field">
@@ -129,7 +115,7 @@ export default function ContactSection() {
                 <textarea
                   id="ct-message"
                   name="message"
-                  rows={5}
+                  rows={6}
                   required
                 />
                 <ValidationError
@@ -157,7 +143,7 @@ export default function ContactSection() {
 
                 {!state.succeeded && state.errors && state.errors.length > 0 && (
                   <p className="ct-status is-error" role="alert">
-                    No pudimos enviar tu mensaje. Intenta nuevamente o contáctanos por WhatsApp o email.
+                    No pudimos enviar tu mensaje. Intentá nuevamente o escribinos por WhatsApp o email.
                   </p>
                 )}
               </div>
@@ -166,24 +152,19 @@ export default function ContactSection() {
         </section>
       </div>
 
-      {/* MAP / VISUAL */}
-      <section className="ct-mapSection" aria-label="Ubicación visual">
-        <img src={contact.mapImage} alt="Visítanos" className="ct-mapBg" />
-<div className="ct-mapCard">
-  <div className="ct-mapIcon">⌖</div>
-  <h3>Visítanos</h3>
-  <p>
-    Estamos a pasos del centro de San Lorenzo, atendiendo pedidos de
-    todo el país.
-  </p>
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=Soltex+Soluciones+Textiles+-+Sucursal+1,+General+Genes+entre+Julia+M.+Cueto+y+Mcal+Estigarribia,+San+Lorenzo,+Paraguay"
-    target="_blank"
-    rel="noreferrer"
-  >
-    Ver en Google Maps
-  </a>
-</div>
+      <section className="ct-visit" aria-label="Ubicación visual">
+        <img src={contact.mapImage} alt="Sucursal Soltex" className="ct-visitBg" />
+
+        <div className="ct-visitCard">
+          <span className="ct-label">Visítanos</span>
+          <h3>Estamos en San Lorenzo</h3>
+          <p>
+            A pasos del centro, atendiendo pedidos de todo el país.
+          </p>
+          <a href={contact.mapsUrl} target="_blank" rel="noreferrer">
+            Ver en Google Maps
+          </a>
+        </div>
       </section>
     </section>
   );
