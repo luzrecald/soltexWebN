@@ -1,0 +1,75 @@
+/* =========================
+   CUSTOMIZATION INTRO
+========================= */
+
+.custom-intro{
+  padding: 120px 0;
+  background: var(--bg);
+}
+
+.custom-intro__inner{
+  width: min(var(--container-max), calc(100% - (var(--container-pad) * 2)));
+  margin: 0 auto;
+}
+
+/* Header */
+
+.custom-intro__header{
+  margin-bottom: 60px;
+}
+
+.custom-intro__kicker{
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nav);
+}
+
+.custom-intro__title{
+  margin: 0 0 18px;
+  font-size: clamp(34px,3vw,48px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.custom-intro__lead{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text);
+}
+
+/* Grid */
+
+.custom-intro__grid{
+/* Item */
+
+.custom-intro__item h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.custom-intro__item p{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text);
+  max-width: 40ch;
+}
+
+/* Responsive */
+
+@media (max-width:1000px){
+
+.custom-intro__grid{
+grid-template-columns:1fr;
+gap:32px;
+}
+
+}
+}
