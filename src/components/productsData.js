@@ -16,7 +16,7 @@ export const PRODUCTS = [
     design: ["Liso", "Rayas", "Patrones", "Letras"],
     materials: ["Algodón", "Poliéster"],
     sizeSectionTitle: "Seleccioná medida",
-    sizeGuideLabel: "Guía de medidas",
+
     sizeGuideText:
       "Las medidas pueden ajustarse según el diseño de la prenda y el requerimiento del cliente.",
     sizesType: "grid",
@@ -46,11 +46,9 @@ export const PRODUCTS = [
 ],
     applications: [],
     design: ["Liso", "Rayas", "Patrones", "Letras"],
-    extraDesignText:
-      "Puede ir a juego con los cuellos o desarrollarse de manera individual.",
     materials: ["Algodón", "Poliéster"],
     sizeSectionTitle: "Seleccioná medida",
-    sizeGuideLabel: "Guía de medidas",
+
     sizeGuideText:
       "Las pretinas pueden desarrollarse en conjunto con el cuello o de manera independiente.",
     sizesType: "grid",
@@ -86,7 +84,7 @@ export const PRODUCTS = [
     design: ["Liso", "Rayas", "Patrones", "Letras"],
     materials: ["Algodón", "Poliéster"],
     sizeSectionTitle: "Producción",
-    sizeGuideLabel: "Información",
+
     sizeGuideText:
       "La cantidad final se define según cuello, mangas o combinación de componentes.",
     sizesType: "text",
@@ -117,7 +115,6 @@ export const PRODUCTS = [
     design: ["Liso", "Rayas", "Patrones", "Letras"],
     materials: ["Algodón", "Poliéster"],
     sizeSectionTitle: "Producción",
-    sizeGuideLabel: "Información",
     sizeGuideText:
       "Las cantidades se calculan en función del desarrollo de cuello, cintura y mangas.",
     sizesType: "text",
